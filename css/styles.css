@@ -44,6 +44,8 @@ body {
 /* Main Styles */
 
 .screen-box {
+  width: 100%;
+  background-color: #333232;
 }
 
 .screen-output {
@@ -54,13 +56,15 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  column-gap: 1.6rem;
-  row-gap: 1.6rem;
+  column-gap: 2.2rem;
+  row-gap: 2.2rem;
 }
 
 .numpad-btn {
   font-size: 2.5rem;
-  padding: 1.6rem 1.6rem;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
 .numpad-top {
