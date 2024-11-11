@@ -6,6 +6,12 @@ FONT SIZE SYSTEM (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 */
 
+/* Color
+1st #333232
+2nd #0c0c0c
+
+*/
+
 /* General */
 * {
   box-sizing: border-box;
@@ -21,7 +27,9 @@ html {
 body {
   background-color: black;
   color: #fff;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -29,4 +37,42 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 6rem 6rem;
+  max-width: 46rem;
+  background-color: #0c0c0c;
+}
+
+/* Main Styles */
+
+.screen-box {
+}
+
+.screen-output {
+  font-size: 2rem;
+}
+
+.numpad-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  column-gap: 1.6rem;
+  row-gap: 1.6rem;
+}
+
+.numpad-btn {
+  font-size: 2.5rem;
+}
+
+.numpad-top {
+}
+
+.numpad-right {
+}
+
+.numpad-nums--box {
+}
+
+.numpad-operator--btn {
+}
+
+.numpad-nums--btn {
 }
