@@ -5,6 +5,8 @@ SPACING SYSTEM (px)
 FONT SIZE SYSTEM (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 */
+
+/* General */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -13,4 +15,18 @@ FONT SIZE SYSTEM (px)
 
 html {
   font-family: sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: black;
+  color: #fff;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 6rem;
 }
