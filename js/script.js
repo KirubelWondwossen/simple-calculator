@@ -1,4 +1,5 @@
 const outputField = document.querySelector(".screen-output");
+const clearBtn = document.querySelector(".clear-btn");
 const percentBtn = document.querySelector(".percent-btn");
 const backBtn = document.querySelector(".back-btn");
 const plusBtn = document.querySelector(".plus-btn");
@@ -23,3 +24,7 @@ const nums00Btn = document.querySelector(".nums00-btn");
 const uiUpdate = function (nums) {
   outputField.textContent = nums;
 };
+
+clearBtn.addEventListener("click", function (e) {
+  uiUpdate(0);
+});
