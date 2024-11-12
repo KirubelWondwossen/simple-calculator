@@ -55,3 +55,37 @@ document.addEventListener("keydown", function (e) {
     uiUpdate(nums0Btn);
   }
 });
+
+nums00Btn.addEventListener("click", function (e) {
+  uiUpdate(nums00Btn);
+});
+nums0Btn.addEventListener("click", function (e) {
+  uiUpdate(nums0Btn);
+});
+nums1Btn.addEventListener("click", function (e) {
+  uiUpdate(nums1Btn);
+});
+nums2Btn.addEventListener("click", function (e) {
+  uiUpdate(nums2Btn);
+});
+nums3Btn.addEventListener("click", function (e) {
+  uiUpdate(nums3Btn);
+});
+nums4Btn.addEventListener("click", function (e) {
+  uiUpdate(nums4Btn);
+});
+nums5Btn.addEventListener("click", function (e) {
+  uiUpdate(nums5Btn);
+});
+nums6Btn.addEventListener("click", function (e) {
+  uiUpdate(nums6Btn);
+});
+nums7Btn.addEventListener("click", function (e) {
+  uiUpdate(nums7Btn);
+});
+nums8Btn.addEventListener("click", function (e) {
+  uiUpdate(nums8Btn);
+});
+nums9Btn.addEventListener("click", function (e) {
+  uiUpdate(nums9Btn);
+});
