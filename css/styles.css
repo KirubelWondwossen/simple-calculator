@@ -48,11 +48,20 @@ body {
 
 .screen-box {
   width: 100%;
+  height: 20rem;
   background-color: #0d0e0d;
+  padding: 1.2rem 1.2rem;
+  position: relative;
 }
 
 .screen-output {
   font-size: 2rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1.2rem;
+  margin-bottom: 2.4rem;
+  margin-right: 1.6rem;
 }
 
 .numpad-box {
@@ -69,15 +78,6 @@ body {
   padding: 1rem 1rem;
   cursor: pointer;
   border-radius: 50%;
-}
-
-.numpad-top {
-}
-
-.numpad-right {
-}
-
-.numpad-nums--box {
 }
 
 .numpad-operator--btn {
