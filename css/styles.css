@@ -26,6 +26,7 @@ FONT SIZE SYSTEM (px)
 html {
   font-family: sans-serif;
   font-size: 62.5%;
+  overflow: hidden;
 }
 
 body {
@@ -71,6 +72,7 @@ body {
   column-gap: 2.2rem;
   row-gap: 2.2rem;
   background-color: #20201fbe;
+  padding: 1.6rem 2.4rem;
 }
 
 .numpad-btn {
@@ -78,6 +80,7 @@ body {
   padding: 1rem 1rem;
   cursor: pointer;
   border-radius: 50%;
+  text-align: center;
 }
 
 .numpad-operator--btn {
@@ -88,5 +91,12 @@ body {
   padding: 1rem 1rem;
 }
 
-.numpad-nums--btn {
+.numpad-btn:hover,
+.numpad-btn:active {
+  background-color: rgba(41, 76, 98, 0.3);
+}
+
+.numpad-operator--btn:hover,
+.numpad-operator--btn:active {
+  color: #4e7c98;
 }
