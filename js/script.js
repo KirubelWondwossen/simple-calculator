@@ -19,3 +19,7 @@ const nums8Btn = document.querySelector(".nums8-btn");
 const nums9Btn = document.querySelector(".nums9-btn");
 const nums0Btn = document.querySelector(".nums0-btn");
 const nums00Btn = document.querySelector(".nums00-btn");
+
+const uiUpdate = function (nums) {
+  outputField.textContent = nums;
+};
