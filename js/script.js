@@ -9,7 +9,7 @@ const divBtn = document.querySelector(".division-btn");
 const dotBtn = document.querySelector(".dot-btn");
 const equal = document.querySelector(".equal-btn");
 
-const numsBtn = document.querySelector(".nums1-btn");
+const nums1Btn = document.querySelector(".nums1-btn");
 const nums2Btn = document.querySelector(".nums2-btn");
 const nums3Btn = document.querySelector(".nums3-btn");
 const nums4Btn = document.querySelector(".nums4-btn");
@@ -20,11 +20,9 @@ const nums8Btn = document.querySelector(".nums8-btn");
 const nums9Btn = document.querySelector(".nums9-btn");
 const nums0Btn = document.querySelector(".nums0-btn");
 const nums00Btn = document.querySelector(".nums00-btn");
+let numsCollection = [];
 
 const uiUpdate = function (nums) {
-  outputField.textContent = nums;
+  numsCollection.push(nums.textContent);
+  outputField.textContent = numsCollection.join("");
 };
-
-clearBtn.addEventListener("click", function (e) {
-  uiUpdate(0);
-});
