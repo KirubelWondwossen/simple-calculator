@@ -81,7 +81,11 @@ body {
 }
 
 .numpad-operator--btn {
-  color: #2099eb;
+  color: #3a6d8c;
+}
+.back-btn {
+  color: #3a6d8c;
+  padding: 1rem 1rem;
 }
 
 .numpad-nums--btn {
