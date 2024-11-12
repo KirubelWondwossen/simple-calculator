@@ -26,3 +26,8 @@ const uiUpdate = function (nums) {
   numsCollection.push(nums.textContent);
   outputField.textContent = numsCollection.join("");
 };
+
+clearBtn.addEventListener("click", function (e) {
+  outputField.textContent = "0";
+  numsCollection = [];
+});
