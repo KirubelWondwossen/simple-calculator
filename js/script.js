@@ -31,3 +31,27 @@ clearBtn.addEventListener("click", function (e) {
   outputField.textContent = "0";
   numsCollection = [];
 });
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "1") {
+    uiUpdate(nums1Btn);
+  } else if (e.key === "2") {
+    uiUpdate(nums2Btn);
+  } else if (e.key === "3") {
+    uiUpdate(nums3Btn);
+  } else if (e.key === "4") {
+    uiUpdate(nums4Btn);
+  } else if (e.key === "5") {
+    uiUpdate(nums5Btn);
+  } else if (e.key === "6") {
+    uiUpdate(nums6Btn);
+  } else if (e.key === "7") {
+    uiUpdate(nums7Btn);
+  } else if (e.key === "8") {
+    uiUpdate(nums8Btn);
+  } else if (e.key === "9") {
+    uiUpdate(nums9Btn);
+  } else if (e.key === "0") {
+    uiUpdate(nums0Btn);
+  }
+});
