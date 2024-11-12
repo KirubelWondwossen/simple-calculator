@@ -7,9 +7,13 @@ FONT SIZE SYSTEM (px)
 */
 
 /* Color
-1st #333232
-2nd #0c0c0c
+1st #292A27
 
+2nd #0D0E0D
+
+3rd #0d0e0d
+
+4th #2099eb
 */
 
 /* General */
@@ -38,14 +42,13 @@ body {
   align-items: center;
   padding: 6rem 6rem;
   max-width: 46rem;
-  background-color: #0c0c0c;
 }
 
 /* Main Styles */
 
 .screen-box {
   width: 100%;
-  background-color: #333232;
+  background-color: #0d0e0d;
 }
 
 .screen-output {
@@ -58,6 +61,7 @@ body {
   grid-template-rows: repeat(5, 1fr);
   column-gap: 2.2rem;
   row-gap: 2.2rem;
+  background-color: #20201fbe;
 }
 
 .numpad-btn {
@@ -77,6 +81,7 @@ body {
 }
 
 .numpad-operator--btn {
+  color: #2099eb;
 }
 
 .numpad-nums--btn {
