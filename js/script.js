@@ -139,6 +139,12 @@ const calculator = function (btn) {
   }
 };
 
+const eventHandler = function (btn) {
+  btn.addEventListener("click", function (e) {
+    outputFix(btn);
+  });
+};
+
 const outputFix = function (btn) {
   nums = arrJoin(uiResult);
   operationArr.push(nums);
@@ -153,12 +159,8 @@ document.addEventListener("keydown", function (e) {
     outputFix(plusBtn);
   }
 });
-minusBtn.addEventListener("click", function (e) {
-  outputFix(minusBtn);
-});
-mulBtn.addEventListener("click", function (e) {
-  outputFix(mulBtn);
-});
-divBtn.addEventListener("click", function (e) {
-  outputFix(divBtn);
-});
+
+eventHandler(plusBtn);
+eventHandler(minusBtn);
+eventHandler(mulBtn);
+eventHandler(divBtn);
