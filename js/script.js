@@ -111,13 +111,6 @@ const uiUpdateScreen2 = function (op) {
   outputField2.style.opacity = 100;
 };
 
-const outputFix = function (btn) {
-  nums = arrJoin(uiResult);
-  operationArr.push(nums);
-  uiResult = [];
-  uiUpdateScreen2(btn);
-};
-
 clearBtn.addEventListener("click", function (e) {
   outputField.textContent = "0";
   uiResult = [];
@@ -129,18 +122,43 @@ backBtn.addEventListener("click", function () {
   uiResult.pop();
 });
 
+const calculator = function (btn) {
+  if (operationArr.length >= 2) {
+    if (btn === plusBtn) {
+      result = operationArr.reduce((acc, curr) => (acc += curr));
+    } else if (btn === minusBtn) {
+      result = operationArr.reduce((acc, curr) => (acc -= curr));
+    } else if (btn === divBtn) {
+      result = operationArr.reduce((acc, curr) =>
+        curr !== 0 ? (acc /= curr) : (outputField.textContent = "ERROR")
+      );
+    } else if (btn === mulBtn) {
+      result = operationArr.reduce((acc, curr) => (acc *= curr));
+    }
+    outputField.textContent = result;
+  }
+};
+
+const outputFix = function (btn) {
+  nums = arrJoin(uiResult);
+  operationArr.push(nums);
+  uiResult = [];
+  uiUpdateScreen2(btn);
+  calculator(btn);
+};
 //Operations
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "+") {
+    outputFix(plusBtn);
   }
 });
 minusBtn.addEventListener("click", function (e) {
-  uiUpdate(minusBtn);
+  outputFix(minusBtn);
 });
 mulBtn.addEventListener("click", function (e) {
-  uiUpdate(mulBtn);
+  outputFix(mulBtn);
 });
 divBtn.addEventListener("click", function (e) {
-  uiUpdate(divBtn);
+  outputFix(divBtn);
 });
