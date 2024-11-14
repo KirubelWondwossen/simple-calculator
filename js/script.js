@@ -153,14 +153,28 @@ const outputFix = function (btn) {
   calculator(btn);
 };
 //Operations
+eventHandler(plusBtn);
+eventHandler(minusBtn);
+eventHandler(mulBtn);
+eventHandler(divBtn);
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "+") {
     outputFix(plusBtn);
   }
 });
-
-eventHandler(plusBtn);
-eventHandler(minusBtn);
-eventHandler(mulBtn);
-eventHandler(divBtn);
+document.addEventListener("keydown", function (e) {
+  if (e.key === "-") {
+    outputFix(minusBtn);
+  }
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "*") {
+    outputFix(mulBtn);
+  }
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "/") {
+    outputFix(divBtn);
+  }
+});
