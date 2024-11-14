@@ -96,6 +96,11 @@ let operationArr = []; //important
 let result;
 let nums;
 
+const arrJoin = function (arr) {
+  nums = Number(arr.reduce((acc, cur) => (acc += cur)));
+  return nums;
+};
+
 const uiUpdate = function (nums) {
   uiResult.push(nums.textContent);
   outputField.textContent = uiResult.join("");
