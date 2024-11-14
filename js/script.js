@@ -21,62 +21,8 @@ const nums8Btn = document.querySelector(".nums8-btn");
 const nums9Btn = document.querySelector(".nums9-btn");
 const nums0Btn = document.querySelector(".nums0-btn");
 const nums00Btn = document.querySelector(".nums00-btn");
-let numsCollection = [];
-let uiResult = [];
-let input;
-let result;
-let nums;
 
-const uiUpdate = function (nums) {
-  input = nums.textContent;
-  uiResult.push(input);
-  outputField.textContent = uiResult.join("");
-  numsCollection = uiResult.map((curr) => Number(curr));
-};
-
-const calculator = function () {
-  if (nums.length >= 2) {
-    result = nums.reduce((acc, curr) => (acc += curr));
-  }
-  return result;
-};
-
-clearBtn.addEventListener("click", function (e) {
-  outputField.textContent = "0";
-  uiResult = [];
-  numsCollection = [];
-});
-
-backBtn.addEventListener("click", function () {
-  numsCollection.pop();
-});
-
-document.addEventListener("keydown", function (e) {
-  if (e.key === "1") {
-    uiUpdate(nums1Btn);
-  } else if (e.key === "2") {
-    uiUpdate(nums2Btn);
-  } else if (e.key === "3") {
-    uiUpdate(nums3Btn);
-  } else if (e.key === "4") {
-    uiUpdate(nums4Btn);
-  } else if (e.key === "5") {
-    uiUpdate(nums5Btn);
-  } else if (e.key === "6") {
-    uiUpdate(nums6Btn);
-  } else if (e.key === "7") {
-    uiUpdate(nums7Btn);
-  } else if (e.key === "8") {
-    uiUpdate(nums8Btn);
-  } else if (e.key === "9") {
-    uiUpdate(nums9Btn);
-  } else if (e.key === "0") {
-    uiUpdate(nums0Btn);
-  } else if (e.key === "+") {
-    uiUpdate(plusBtn);
-  }
-});
-
+//Event Listners
 nums00Btn.addEventListener("click", function (e) {
   uiUpdate(nums00Btn);
 });
@@ -112,6 +58,63 @@ nums9Btn.addEventListener("click", function (e) {
 });
 dotBtn.addEventListener("click", function (e) {
   uiUpdate(dotBtn);
+});
+///////////////////////////////////////////////
+//////////////////////////////////////////////
+
+//Keyboard input
+document.addEventListener("keydown", function (e) {
+  if (e.key === "1") {
+    uiUpdate(nums1Btn);
+  } else if (e.key === "2") {
+    uiUpdate(nums2Btn);
+  } else if (e.key === "3") {
+    uiUpdate(nums3Btn);
+  } else if (e.key === "4") {
+    uiUpdate(nums4Btn);
+  } else if (e.key === "5") {
+    uiUpdate(nums5Btn);
+  } else if (e.key === "6") {
+    uiUpdate(nums6Btn);
+  } else if (e.key === "7") {
+    uiUpdate(nums7Btn);
+  } else if (e.key === "8") {
+    uiUpdate(nums8Btn);
+  } else if (e.key === "9") {
+    uiUpdate(nums9Btn);
+  } else if (e.key === "0") {
+    uiUpdate(nums0Btn);
+  }
+});
+/////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+
+//Variable Declaration
+
+let uiResult = []; //important
+let operationArr = []; //important
+let result;
+let nums;
+
+const uiUpdate = function (nums) {
+  uiResult.push(nums.textContent);
+  outputField.textContent = uiResult.join("");
+};
+
+const uiUpdateScreen2 = function (op) {
+  outputField2.textContent = op.textContent;
+  outputField2.style.opacity = 100;
+};
+
+clearBtn.addEventListener("click", function (e) {
+  outputField.textContent = "0";
+  uiResult = [];
+  operationArr = [];
+  outputField2.style.opacity = 0;
+});
+
+backBtn.addEventListener("click", function () {
+  uiResult.pop();
 });
 
 //Operations
