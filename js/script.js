@@ -21,15 +21,33 @@ const nums9Btn = document.querySelector(".nums9-btn");
 const nums0Btn = document.querySelector(".nums0-btn");
 const nums00Btn = document.querySelector(".nums00-btn");
 let numsCollection = [];
+let uiResult = [];
+let input;
+let result;
+let nums;
 
 const uiUpdate = function (nums) {
-  numsCollection.push(nums.textContent);
-  outputField.textContent = numsCollection.join("");
+  input = nums.textContent;
+  uiResult.push(input);
+  outputField.textContent = uiResult.join("");
+  numsCollection = uiResult.map((curr) => Number(curr));
+};
+
+const calculator = function () {
+  if (nums.length >= 2) {
+    result = nums.reduce((acc, curr) => (acc += curr));
+  }
+  return result;
 };
 
 clearBtn.addEventListener("click", function (e) {
   outputField.textContent = "0";
+  uiResult = [];
   numsCollection = [];
+});
+
+backBtn.addEventListener("click", function () {
+  numsCollection.pop();
 });
 
 document.addEventListener("keydown", function (e) {
@@ -53,6 +71,8 @@ document.addEventListener("keydown", function (e) {
     uiUpdate(nums9Btn);
   } else if (e.key === "0") {
     uiUpdate(nums0Btn);
+  } else if (e.key === "+") {
+    uiUpdate(plusBtn);
   }
 });
 
@@ -88,4 +108,23 @@ nums8Btn.addEventListener("click", function (e) {
 });
 nums9Btn.addEventListener("click", function (e) {
   uiUpdate(nums9Btn);
+});
+dotBtn.addEventListener("click", function (e) {
+  uiUpdate(dotBtn);
+});
+
+//Operations
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "+") {
+  }
+});
+minusBtn.addEventListener("click", function (e) {
+  uiUpdate(minusBtn);
+});
+mulBtn.addEventListener("click", function (e) {
+  uiUpdate(mulBtn);
+});
+divBtn.addEventListener("click", function (e) {
+  uiUpdate(divBtn);
 });
