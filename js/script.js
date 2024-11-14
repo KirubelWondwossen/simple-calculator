@@ -111,6 +111,13 @@ const uiUpdateScreen2 = function (op) {
   outputField2.style.opacity = 100;
 };
 
+const outputFix = function (btn) {
+  nums = arrJoin(uiResult);
+  operationArr.push(nums);
+  uiResult = [];
+  uiUpdateScreen2(btn);
+};
+
 clearBtn.addEventListener("click", function (e) {
   outputField.textContent = "0";
   uiResult = [];
