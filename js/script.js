@@ -1,4 +1,5 @@
 const outputField = document.querySelector(".screen-output");
+const outputField2 = document.querySelector(".screen-output2");
 const clearBtn = document.querySelector(".clear-btn");
 const percentBtn = document.querySelector(".percent-btn");
 const backBtn = document.querySelector(".back-btn");
