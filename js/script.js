@@ -23,42 +23,24 @@ const nums0Btn = document.querySelector(".nums0-btn");
 const nums00Btn = document.querySelector(".nums00-btn");
 
 //Event Listners
-nums00Btn.addEventListener("click", function (e) {
-  uiUpdate(nums00Btn);
-});
-nums0Btn.addEventListener("click", function (e) {
-  uiUpdate(nums0Btn);
-});
-nums1Btn.addEventListener("click", function (e) {
-  uiUpdate(nums1Btn);
-});
-nums2Btn.addEventListener("click", function (e) {
-  uiUpdate(nums2Btn);
-});
-nums3Btn.addEventListener("click", function (e) {
-  uiUpdate(nums3Btn);
-});
-nums4Btn.addEventListener("click", function (e) {
-  uiUpdate(nums4Btn);
-});
-nums5Btn.addEventListener("click", function (e) {
-  uiUpdate(nums5Btn);
-});
-nums6Btn.addEventListener("click", function (e) {
-  uiUpdate(nums6Btn);
-});
-nums7Btn.addEventListener("click", function (e) {
-  uiUpdate(nums7Btn);
-});
-nums8Btn.addEventListener("click", function (e) {
-  uiUpdate(nums8Btn);
-});
-nums9Btn.addEventListener("click", function (e) {
-  uiUpdate(nums9Btn);
-});
-dotBtn.addEventListener("click", function (e) {
-  uiUpdate(dotBtn);
-});
+const eventHandlerForNums = function (btn) {
+  btn.addEventListener("click", function (e) {
+    uiUpdate(btn);
+  });
+};
+
+eventHandlerForNums(nums00Btn);
+eventHandlerForNums(nums0Btn);
+eventHandlerForNums(nums1Btn);
+eventHandlerForNums(nums2Btn);
+eventHandlerForNums(nums3Btn);
+eventHandlerForNums(nums4Btn);
+eventHandlerForNums(nums5Btn);
+eventHandlerForNums(nums6Btn);
+eventHandlerForNums(nums7Btn);
+eventHandlerForNums(nums8Btn);
+eventHandlerForNums(nums9Btn);
+eventHandlerForNums(dotBtn);
 ///////////////////////////////////////////////
 //////////////////////////////////////////////
 
@@ -96,6 +78,11 @@ let operationArr = []; //important
 let result;
 let nums;
 
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+
+//Functions
+
 const arrJoin = function (arr) {
   nums = Number(arr.reduce((acc, cur) => (acc += cur)));
   return nums;
@@ -110,17 +97,6 @@ const uiUpdateScreen2 = function (op) {
   outputField2.textContent = op.textContent;
   outputField2.style.opacity = 100;
 };
-
-clearBtn.addEventListener("click", function (e) {
-  outputField.textContent = "0";
-  uiResult = [];
-  operationArr = [];
-  outputField2.style.opacity = 0;
-});
-
-backBtn.addEventListener("click", function () {
-  uiResult.pop();
-});
 
 const calculator = function (btn) {
   if (operationArr.length >= 2) {
@@ -152,12 +128,17 @@ const outputFix = function (btn) {
   uiUpdateScreen2(btn);
   calculator(btn);
 };
+
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+
 //Operations
 eventHandler(plusBtn);
 eventHandler(minusBtn);
 eventHandler(mulBtn);
 eventHandler(divBtn);
 
+//input from keyboard
 document.addEventListener("keydown", function (e) {
   if (e.key === "+") {
     outputFix(plusBtn);
@@ -177,4 +158,18 @@ document.addEventListener("keydown", function (e) {
   if (e.key === "/") {
     outputFix(divBtn);
   }
+});
+
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+
+clearBtn.addEventListener("click", function (e) {
+  outputField.textContent = "0";
+  uiResult = [];
+  operationArr = [];
+  outputField2.style.opacity = 0;
+});
+
+backBtn.addEventListener("click", function () {
+  uiResult.pop();
 });
