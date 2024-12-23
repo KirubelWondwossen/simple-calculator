@@ -55,9 +55,7 @@ document.addEventListener("keydown", function (e) {
 
 let uiResult = []; //important
 let operationArr = []; //important
-let result;
-let nums;
-let btns;
+let result, nums, btns;
 
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
@@ -65,7 +63,7 @@ let btns;
 //Functions
 
 const arrJoin = function (arr) {
-  nums = Number(arr.reduce((acc, cur) => (acc += cur)));
+  nums = +arr.reduce((acc, cur) => (acc += cur));
   return nums;
 };
 
@@ -96,19 +94,19 @@ const calculator = function (btn) {
   }
 };
 
-const eventHandler = function (btn) {
-  btn.addEventListener("click", function (e) {
-    outputFix(btn);
-    btns = btn;
-  });
-};
-
 const outputFix = function (btn) {
   nums = arrJoin(uiResult);
   operationArr.push(nums);
   uiResult = [];
   uiUpdateScreen2(btn);
   calculator(btn);
+};
+
+const eventHandler = function (btn) {
+  btn.addEventListener("click", function (e) {
+    outputFix(btn);
+    btns = btn;
+  });
 };
 
 ///////////////////////////////////////////////////////
@@ -139,6 +137,13 @@ document.addEventListener("keydown", function (e) {
 document.addEventListener("keydown", function (e) {
   if (e.key === "/") {
     outputFix(divBtn);
+  }
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Enter" && btns) {
+    outputFix(btns);
+  } else {
+    alert("Field is Empty");
   }
 });
 
@@ -174,7 +179,11 @@ clearBtn.addEventListener("click", function (e) {
 });
 
 equalBtn.addEventListener("click", function () {
-  outputFix(btns);
+  if (btns) {
+    outputFix(btns);
+  } else {
+    alert("Field is Empty");
+  }
 });
 
 backBtn.addEventListener("click", function () {
