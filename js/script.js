@@ -8,7 +8,7 @@ const minusBtn = document.querySelector(".minus-btn");
 const mulBtn = document.querySelector(".mult-btn");
 const divBtn = document.querySelector(".division-btn");
 const dotBtn = document.querySelector(".dot-btn");
-const equal = document.querySelector(".equal-btn");
+const equalBtn = document.querySelector(".equal-btn");
 
 const nums1Btn = document.querySelector(".nums1-btn");
 const nums2Btn = document.querySelector(".nums2-btn");
@@ -22,28 +22,8 @@ const nums9Btn = document.querySelector(".nums9-btn");
 const nums0Btn = document.querySelector(".nums0-btn");
 const nums00Btn = document.querySelector(".nums00-btn");
 
-//Event Listners
-const eventHandlerForNums = function (btn) {
-  btn.addEventListener("click", function (e) {
-    uiUpdate(btn);
-  });
-};
-
-eventHandlerForNums(nums00Btn);
-eventHandlerForNums(nums0Btn);
-eventHandlerForNums(nums1Btn);
-eventHandlerForNums(nums2Btn);
-eventHandlerForNums(nums3Btn);
-eventHandlerForNums(nums4Btn);
-eventHandlerForNums(nums5Btn);
-eventHandlerForNums(nums6Btn);
-eventHandlerForNums(nums7Btn);
-eventHandlerForNums(nums8Btn);
-eventHandlerForNums(nums9Btn);
-eventHandlerForNums(dotBtn);
-///////////////////////////////////////////////
-//////////////////////////////////////////////
-
+///////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 //Keyboard input
 document.addEventListener("keydown", function (e) {
   if (e.key === "1") {
@@ -77,6 +57,7 @@ let uiResult = []; //important
 let operationArr = []; //important
 let result;
 let nums;
+let btns;
 
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
@@ -118,6 +99,7 @@ const calculator = function (btn) {
 const eventHandler = function (btn) {
   btn.addEventListener("click", function (e) {
     outputFix(btn);
+    btns = btn;
   });
 };
 
@@ -160,6 +142,27 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
+////////////////////////////////////////////////////////////
+// Event Listners
+const eventHandlerForNums = function (btn) {
+  btn.addEventListener("click", function (e) {
+    uiUpdate(btn);
+  });
+};
+
+eventHandlerForNums(nums00Btn);
+eventHandlerForNums(nums0Btn);
+eventHandlerForNums(nums1Btn);
+eventHandlerForNums(nums2Btn);
+eventHandlerForNums(nums3Btn);
+eventHandlerForNums(nums4Btn);
+eventHandlerForNums(nums5Btn);
+eventHandlerForNums(nums6Btn);
+eventHandlerForNums(nums7Btn);
+eventHandlerForNums(nums8Btn);
+eventHandlerForNums(nums9Btn);
+eventHandlerForNums(dotBtn);
+
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 
@@ -168,6 +171,10 @@ clearBtn.addEventListener("click", function (e) {
   uiResult = [];
   operationArr = [];
   outputField2.style.opacity = 0;
+});
+
+equalBtn.addEventListener("click", function () {
+  outputFix(btns);
 });
 
 backBtn.addEventListener("click", function () {
