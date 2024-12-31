@@ -109,6 +109,14 @@ const eventHandler = function (btn) {
   });
 };
 
+const check = function () {
+  if (btns && uiResult.length > 0) {
+    outputFix(btns);
+  } else {
+    alert("Field is Empty");
+  }
+  btns = "";
+};
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 
@@ -140,13 +148,10 @@ document.addEventListener("keydown", function (e) {
   }
 });
 document.addEventListener("keydown", function (e) {
-  if (e.key === "Enter" && btns) {
-    outputFix(btns);
-  } else {
-    alert("Field is Empty");
+  if (e.key === "Enter") {
+    check();
   }
 });
-
 ////////////////////////////////////////////////////////////
 // Event Listners
 const eventHandlerForNums = function (btn) {
@@ -179,11 +184,7 @@ clearBtn.addEventListener("click", function (e) {
 });
 
 equalBtn.addEventListener("click", function () {
-  if (btns) {
-    outputFix(btns);
-  } else {
-    alert("Field is Empty");
-  }
+  check();
 });
 
 backBtn.addEventListener("click", function () {
